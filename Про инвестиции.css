@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.window{ /* задний фон */
+    margin-left: 0px;
+    height: 100%;
+    width: 100%;
+    background: url(Вход.фон.jpg);
+    background-position: left;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.open{
+    display: flex !important; 
+/* !important означает что это важно, последующие правила игнорируются 
+и выполняется это правило */
+}
+.header{ /* шапка */
+    margin-top: 0px ; /* внешний отступ */
+    margin-left: 10px;
+    padding: 0px;
+    display: flex;
+    /* text-align: justify; */
+    align-items: center; /* выравнивание всех эл-ов по центру в шапке */
+    min-height: 60px;
+    border-radius: 15px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    color: white;
+    position: fixed; /*шапка стоит на месте, контент двигается*/
+    width: 98%;
+    list-style-type: none;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.search{  /* кнопка поиск */
+    height: 30px;
+    width: 170px;
+    margin-left: 460px auto;
+    padding-left: 12px;
+    border: none; /* убираем границы */
+    border-radius: 15px;
+    outline: none;
+} 
+.vhod{
+    padding: 0px;
+    cursor: pointer;
+    border: none; /* убираем границы */
+    border-radius: none;
+    background-color: transparent;
+    color: #141414;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: end;
+    position: absolute;
+    right: 8px;
+    top: 11px;
+    margin-right: 40px;
+}
+.nav{
+    display: none;
+    height: 140px;
+    width: 80px;
+    margin-left: auto;
+    padding: 30px 90px 50px 10px;
+    top: 0px; bottom: 0; left: 0px; right: 8px;
+    border-radius: 15px;
+    flex-direction: column;
+    position: fixed;
+    z-index: 50;
+    overflow-y: auto;
+    background-color: rgb(104, 94, 94);
+    animation: burgerAnimation 0.4s;
+    transition: .4s;
+}
+.nav ul{ /* пункты меню */
+    width: 100%;
+    list-style: none;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5;
+    transition: 0.4s;
+}
+a   {text-decoration: none;}
+#navbar a:link, #navbar a:visited {
+    color: rgb(255, 255, 255);}
+#navbar a:hover {color: rgb(0, 0, 0);
+}
+.burger{
+    display: flex;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    width: 25px;
+    height: 18px;
+    margin-left: auto;
+    top: 0px; bottom: 0; left: -10px; right: 0px;
+}
+.burger span{
+    height: 2px;
+    width: 100%;
+    transform: scale(1);
+    background-color: #141414;
+    border-radius: 15px;
+}
+.burger:before, .burger:after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #141414;
+    transition: all 0.5s ease 0s;
+    border-radius: 15px;
+}
+.burger:before {top: 0}
+.burger:after {bottom: 0}
+/* Добавляем класс active для анимации иконки бургера */
+.burger.active span {
+    transform: scale(0);
+}
+.burger.active:after{
+    top: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+.burger.active:before{
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+            /* Код для текста */
+
+h1{
+    text-align: center;
+    margin: -30px 0px 0px 0px;
+    padding-top: 10px; /* отступ внутри */
+}
+p{
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: justify;
+    margin: 5px 10px 0px 10px;
+}
+.photo{
+    border-radius: 15px;
+}
+.text1{
+    text-align: center;
+    margin: 0px 290px 60px 290px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+.text2{
+    text-align: center;
+    margin: 0px 290px 60px 290px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+
+/* При разрешении экрна 900px и ниже, выводим на экран иконку бургера */
+@media (max-width: 1300px){
+    .photo{display: none;}
+}
+@media (max-width: 1000px){
+    .text1,.text2{margin: 0px 90px 60px 90px; 
+}
+}
+#Btn1,#Btn2{
+    display: flex;
+    position: static;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border: none; /* границы кнопки */
+    background-color: transparent;
+    color: #141414;
+    transition: .2s;
+}
+#more1,#more2 {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/* WHATS APP */
+.social_whatsapp a{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: fixed;
+    right: 20px;
+    top: 78%;
+    background: #fff;
+    border: 0px solid #ccc;
+    box-shadow: 0px 2px 4px /* тень для элемента */
+    rgba(0,0,0,0.15), inset 0 0 50px 
+    rgba(0,0,0,0.1); 
+    border-radius: 24px;
+    margin: 0px 0px 0px 0;
+    padding: 6px;
+    color: #000; 
+    cursor: pointer;
+}
+.social_whatsapp a:hover {
+    background:#5d84ae; 
+    color:#fff;
+}
+.social_whatsapp a i {
+    display: inline;
+    font-size: 1.3em !important;
+}
+/* TELEGRAM */
+.social_telegram a{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: fixed;
+    right: 20px;
+    top: 83%;
+    background: #fff;
+    border: 0px solid #ccc;
+    box-shadow: 0px 2px 4px 
+    rgba(0,0,0,0.15), inset 0 0 50px 
+    rgba(0,0,0,0.1);
+    border-radius: 24px;
+    margin: 0px 0px 0px 0;
+    padding: 6px;
+    color: #000;
+}
+.social_telegram a:hover {
+    background: #5d84ae; 
+    color: #fff;}
+.social_telegram a i {
+    display: inline;
+    font-size: 1.3em !important;
+}
+/* VK */
+.social_vk a {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: fixed;
+    right: 20px;
+    top: 88%;
+    background: #fff;
+    border: 0px solid #ccc;
+    box-shadow: 0px 2px 4px 
+    rgba(0,0,0,0.15), inset 0 0 50px 
+    rgba(0,0,0,0.1);
+    border-radius: 24px;
+    margin: 0px 0px 0px 0;
+    padding: 6px;
+    color: #000;
+    }
+.social_vk a:hover {
+    background: #5d84ae; 
+    color: #fff;}
+.social_vk a i {
+    display: inline;
+    font-size: 1.3em !important;
+}
+/* YOUTUBE */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+.social_youtube a {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: fixed;
+    right: 20px;
+    top: 93%;
+    background: #ffffff;
+    border: 0px solid #ccc;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.15), 
+    inset 0 0 50px rgba(0,0,0,0.1);
+    border-radius: 24px;
+    margin: 0 0px 0px 0;
+    padding: 6px;
+    color: rgb(0, 0, 0);
+}
+.social_youtube a:hover {
+    background:#c4302b; 
+    color: #fff;}
+
+.social_youtube a i {
+    display: inline;
+    font-size: 1.3em !important;
+}
+
+
